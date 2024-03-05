@@ -1,0 +1,73 @@
+{% extends "myapp/base.html" %}
+
+//  Title
+{% block title %}Display Employees{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        
+        <!-- <h3>hello again {{ user.get_username }}</h3> -->
+
+        <div class="row">
+            <div class="col-4">
+                <h2>Employees</h2>
+            </div>
+            <div class="col-8">
+                <div class=" col-7 mt-1">
+                    <form name="searchForm" method="get">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <input name="search" type="text" class="form-control" placeholder="Search">
+                            <div class="input-group-btn">
+                                <button name="searchButton" class="btn btn-secondary" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+
+        <table class="table mt-4 ">
+            <thead class="align-middle ">
+                <th class="">#</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Department</th>
+                <th>Location</th>
+                <th>Salary</th>
+                <th>Bonus</th>
+                <th>Status</th>
+                <th>Extra Bonus</th>
+                <th>Role</th>
+                <th>Hire Date</th>
+                <th></th>
+                <th></th>
+            </thead>
+
+            <tbody class="">
+                {% for emp in emps %}
+                    <tr class="align-middle">
+                        <th>{{ emp.id }}</th>
+                        <td>{{ emp.first_name }}</td>
+                        <td>{{ emp.last_name }}</td>
+                        <td>{{ emp.dept }}</td>
+                        <td>{{ emp.dept.dep_location }}</td>
+                        <td>{{ emp.salary }}</td>
+                        <td>{{ emp.bonus }}</td>
+                        <td>{{ emp.status }}</td>
+                        <td>{{ emp.extra_bonus }}</td>
+                        <td>{{ emp.role }}</td>
+                        <td>{{ emp.hire_date }}</td>
+                        <td>
+                            <a href="/update_emp/{{emp.id}}"><button name=update class="btn btn-success btn-sm">Update</button></a>
+                        </td>
+                        <td>
+                            <a href="/remove_emp/{{emp.id}}"><button name=remove class="btn btn-danger btn-sm">-</button></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}

@@ -1,0 +1,34 @@
+
+        <div class="col-lg-2 ms-0 me-0" style="height: 100vh;">
+            <div id="wrapper" class="toggled" style="overflow-y: auto; background: #FCFCFC; height:100%;">
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper">
+                    <ul class="sidebar-nav">
+                        <div class="sidebar-brand mb-5 mt-4">Employee Surface</div>
+                        <hr>
+                        <li> <a href="/home">Home</a> </li>
+                        <li> <a href="/salary">Salary</a> </li>
+                        <li> <a href="/departments">Departments</a> </li>
+                        <li> <a href="/announcements">Announcements</a> </li>
+                        
+                        {% if authUser.status == "manager" %}
+                        
+                        
+                        <li> <a href="/add_announcement">Add announcement</a> </li>
+                        <li> <a href="/add_emp">Add Employee</a> </li>
+                        <li> <a href="/all_emp">View Employees</a> </li>
+
+                        {% endif %}
+                        
+                    </ul>
+                    <img src="{{photo.url}}" alt="profile" width="40" height="40" class="rounded-circle ms-4">
+
+                    <div class="fw-bold mt-4"><a href="/logout" class="link-danger link-underline link-underline-opacity-0 ms-4">Logout</a></div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-10 mt-5">
+            <!-- main content -->
+            

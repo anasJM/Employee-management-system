@@ -1,0 +1,27 @@
+{% extends "myapp/base.html" %}
+
+// Title
+{% block title %}Departments{% endblock title %}
+
+{% block content %}
+
+<div class="container pt-2">
+
+    <h1>{{ department.dep_name }} Employees</h1>
+    <div class="row">
+            {% for emp in emps %}
+            <div class="col-md-3 col-sm-6 mt-4">
+                <div class="sign p-5 bg-light">
+                    <img src="{{ emp.photo.url }}" alt="profil" class="circle">
+                    <h2>{{ emp.first_name|title }} {{ emp.last_name|title }}</h2>
+                    <p>Role: {{ emp.status|title }}</p>
+                    <p>Department: {{ emp.dept }}</p>
+                    <p>Hire Date: {{ emp.hire_date }}</p>
+                </div>
+            </div>
+            {% endfor %}
+    </div>
+
+</div>
+
+{% endblock content %}

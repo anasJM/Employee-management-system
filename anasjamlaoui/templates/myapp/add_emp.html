@@ -1,0 +1,112 @@
+{% extends "myapp/base.html" %}
+
+// Title
+{% block title %}Add Employee{% endblock title %}
+
+{% block content %}
+
+<div class="container pt-2">
+    <h2>Add Employee!</h2>
+    <!-- ------------------ -->
+
+    <div class="mx-auto" style="width: 800px;">
+        <form method="post" class="mt-3">
+
+            {% csrf_token %}
+
+            <div class="row">
+
+                <div class="col-md-6 form-group">
+                    <div class="mb-3">
+                        <label for="first_name" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" required>
+                    </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <div class="mb-3">
+                        <label for="second_name" class="form-label">Second Name</label>
+                        <input type="text" class="form-control" id="second_name" name="second_name" required>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-6 form-group">
+                    <div class="mb-3">
+                        <label for="dept" class="form-label">Departement</label>
+                        <!-- <input type="text" class="form-control" id="dept" name="dept" required> -->
+                        <select class="form-select" name="dept" id="dept" required>
+                            <option value="" disabled selected>select department</option>
+                            {% for dep in department %}
+                            <option value="{{dep.id}}">{{dep.dep_name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <div class="mb-3">
+                        <label for="salary" class="form-label">Salary</label>
+                        <input type="number" class="form-control" id="salary" name="salary" required>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 form-group">
+                    <div class="mb-3">
+                        <label for="bonus" class="form-label">Bonus</label>
+                        <input type="number" class="form-control" id="bonus" name="bonus" required>
+                    </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <div class="mb-3">
+                        <label for="status" class="form-label">Status</label>
+                        <input type="text" class="form-control" id="status" name="status" required>
+                    </div>
+                </div>
+
+            </div>
+            
+
+            <div class="row">
+
+                <div class="col-md-6 form-group">
+                    <div class="mb-3">
+                        <label for="extra_bonus" class="form-label">Extra Bonus</label>
+                        <input type="number" class="form-control" id="extra_bonus" name="extra_bonus" required>
+                    </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Role</label>
+                        <!-- <input type="text" class="form-control" id="role" name="role" required> -->
+                        <select class="form-select" name="role" id="role" required>
+                            <option value="" disabled selected>select role</option>
+                            {% for role in roles %}
+                            <option value="{{role.id}}">{{role.role_name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mb-3">
+                <label for="hire_date" class="form-label">Date</label>
+                <input type="date" class="form-control" id="hire_date" name="hire_date" required>
+            </div>
+
+
+            <button type="submit" class="btn btn-secondary mt-2 mx-auto btn-block rounded-pill" name="submit">Add Employee</button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock content %}

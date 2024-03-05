@@ -1,0 +1,59 @@
+{% extends "myapp/base.html" %}
+
+// Title
+{% block title %}Announcements{% endblock title %}
+
+{% block content %}
+
+<div class="container pt-2">
+    <h2 class="mb-2">Announcements</h2>
+    
+    <div class="row">
+        {% for an in anouncements %}
+        <div class="col-md-3 me-5 my-2">
+            
+            <div class="card bg-light rounded-5 border-0 p-3" style="width: 18rem;">
+
+                <div class="card-body ">
+                    <h5 class="card-title">{{ an.anc_title }}</h5>
+                    <p class="card-text">
+                        <span class="fs-6 text-secondary">Announced by: {{ an.anc_admin.get_username }}</span>
+                        <br>
+                        <span class="text-secondary">{{ an.anc_date|date:"F j, Y | g:i A" }}</span>
+                        <br>
+                    </p>
+
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalLong{{ an.id }}">
+                        Details
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalLong{{ an.id }}" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">{{ an.anc_title }}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {{ an.anc_description|linebreaksbr }}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock content %}

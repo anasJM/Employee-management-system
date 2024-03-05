@@ -1,0 +1,28 @@
+{% extends "myapp/base.html" %}
+
+// Title
+{% block title %}Departments{% endblock title %}
+
+{% block content %}
+
+<div class="container pt-2">
+
+    <h2>Departments</h2>
+    <div class="row cards">
+        {% for deps in departs %}
+            
+                <div class="col bg-light m-2 mt-5 py-5 rounded-5">
+                    <a href="/department/{{ deps.dep_name }}" class="text-dark link-underline link-underline-opacity-0">
+                    <center>
+                        <h2>{{ deps.dep_name }}</h2>
+                        <h5>{{ deps.dep_location }}</h5>
+                    </center>
+                    </a>
+                </div>
+            
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock content %}

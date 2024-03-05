@@ -1,0 +1,45 @@
+{% extends "myapp/base.html" %}
+
+// Title
+{% block title %}Salary{% endblock title %}
+
+{% block content %}
+
+<div class="container pt-2">
+
+    <h2>Salary</h2>
+    <div class="row">
+            
+        <div class="col m-2 py-5 bg-light rounded-5">
+            <center>
+                <h4>Salary</h4>
+                <h2>{{ baseSalary }} DH</h2>
+            </center>
+        </div>
+
+        <div class="col m-2 py-5 bg-light rounded-5">
+            <center>
+                <h4>Bonus</h4>
+                <h2>{{ bonus }} DH</h2>
+            </center>
+        </div>
+
+        <div class="col m-2 py-5 bg-light rounded-5">
+            <center>
+                <h4>Extra Bonus</h4>
+                <h2>{{ extraBonus }} DH</h2>
+            </center>
+        </div>
+
+        <div class="col-12 m-2 py-5 bg-light rounded-5">
+            <center>
+                <h3>Total</h3>
+                <h1>{{ totalSalary }} DH</h1>
+            </center>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}

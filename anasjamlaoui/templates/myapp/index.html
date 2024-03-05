@@ -1,0 +1,84 @@
+{% extends "myapp/base.html" %}
+
+// Title
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+
+<div class="container">
+
+  <div class="row mt-2">
+    <h3>Hello {{ user.get_username}},</h3>
+  </div>
+
+  <div class="row mt-3">
+
+    <div class="col-md-4 col-sm-4 rounded-5">
+
+        <center>
+          <div class="py-5 bg-light rounded-5">
+            <h1>{{totalEmp}}</h1>
+            <h4>Employees</h4>
+          </div>
+        </center>
+
+    </div>
+
+    <div class="col-md-4 col-sm-4">
+      
+        <center>
+          <div class="py-5 bg-light rounded-5">
+            <h1>{{totalMan}}</h1>
+            <h4>Managers</h4>
+          </div>
+        </center>
+
+    </div>
+
+    <div class="col-md-4 col-sm-4">
+        <center>
+          <div class="py-5 bg-light rounded-5">
+            <h1>{{totalDep}}</h1>
+            <h4>Departments</h4>
+          </div>
+        </center>
+    </div>
+
+    
+
+    <!-- <div class="col-md-3 col-sm-4">
+
+      <div class="card">
+        <center>
+          <div class="card-body py-5 primary">
+            <h1>{{ userSalary }} DH</h1>
+            <h4>Salary</h4>
+          </div>
+        </center>
+      </div>
+
+    </div>
+
+    <div class="col-md-3 col-sm-4">
+
+      <div class="card">
+        <center>
+          <div class="card-body py-5 primary">
+            <h1>{{ userBonus }} DH</h1>
+            {% if authUser.status == 'manager' %}
+              <h1>{{ userExtraBonus }} DH</h1>
+            {% endif %}
+            <h4>Bonus</h4>
+          </div>
+        </center>
+      </div>
+
+    </div> -->
+
+  </div>
+
+</div>
+
+
+{% endblock content %}

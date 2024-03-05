@@ -1,0 +1,83 @@
+body {
+    overflow-x: hidden;
+    /* font-family: Roboto,'Times New Roman', Times, serif; */
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    display: block;
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #5F5F5F;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.sidebar-nav li a:hover {
+    color: #000000;
+    text-decoration: none;
+    background: #ffffff;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-brand {
+    height: 65px;
+    font-size: 30px;
+    text-align: center;
+    font-family: roboto;
+    font-weight: 600;
+    color: #707070;
+}
+
+.sign {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    /* Adjust for desired rounded corners */
+    text-align: center;
+    font-family: sans-serif;
+    border-radius: 8%;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /* Create a perfect circle */
+    background-color: #F0F0F0;
+    /* Adjust for desired circle color */
+    margin: 0 auto 20px;
+    /* Center the circle horizontally */
+}
+
+.sign h2 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.sign p {
+    margin-bottom: 2px;
+    font-size: smaller;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: #5F5F5F;
+}
+
+table{
+    font-size: 16px;
+}
+
